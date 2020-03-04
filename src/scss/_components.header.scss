@@ -6,11 +6,12 @@
    flex-direction: column;
    color: white;
    
-   &_main {
+   &__main {
       height: 95px;
       width: 100%;
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
       align-items: center;
       padding-left: $padding-lr_4;
       padding-right: $padding-lr_4;
@@ -35,9 +36,110 @@
          font-size: rem-calc(40);
          letter-spacing: rem-calc(-1.5);
       }
+
+      &__right {
+         display: flex;
+         flex-direction: row;
+         flex-wrap: nowrap;
+         align-items: center;
+         justify-content: right;
+         display: flex;
+
+         @include mq(770) {
+            width: 340px;
+         }
+         
+         @include mq(1000) {
+            width: 440px;
+
+         }
+
+         input {
+            width: 220px;
+            height: 42.5px;
+            border-radius: 4px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+            background-color: $orange-drkr;
+            border: 1px solid;
+            border-color: rgba(0,0,0,0.1);
+            color: $white;
+            padding: 0px 15px;
+            line-height: 1;
+            padding: .75em 1em;
+            font-weight: 300;
+            transition: background-color 0.2s ease-in;
+            
+            @include mq(1000) {
+               width: 320px;
+            }
+            
+            &:focus {
+               outline: none;
+               background-color: darken($orange-drkr, 5%);
+               transition: background-color 0.1s ease-in;
+
+            }
+         }
+
+         .search-icon {
+            width: 20px;
+            height: 20px;
+         }
+
+         .login {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            font-weight: 800;
+            margin-left: 50px;
+            white-space: nowrap;
+            
+            img {
+               position: relative;
+               width: 30px;
+               height: 30px;
+               margin-left: 20px;
+               
+               @include mq(770) {
+                  top: -3px;
+                  width: 20px;
+                  height: 20px;
+                  margin-left: 0px;
+                  margin-right: 5px;
+               }
+            }
+            
+            span {
+               display: none;
+
+               @include mq(770) {
+                  display: inline;
+               }
+            }
+         }
+
+         .search-icon {
+            display: inline;
+            width: 30px;
+            height: 30px;
+
+            @include mq(770) {
+               display: none;
+            }
+         }
+
+         input {
+            display: none;
+
+            @include mq(770) {
+               display: inline;
+            }
+         }
+      }
    }
 
-   &_nav {
+   &__nav {
       height: 55px;
       border-top: 1px $white solid;
    }
