@@ -1,0 +1,44 @@
+.header {
+   background-color: $orange;
+   width: 100%;
+   height: 150px;
+   display: flex;
+   flex-direction: column;
+   color: white;
+   
+   &_main {
+      height: 95px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-left: $padding-lr_4;
+      padding-right: $padding-lr_4;
+
+      @include mq(600) {
+         padding-left: $padding-lr_3;
+         padding-right: $padding-lr_3;
+      }
+
+      @include mq(1000) {
+         padding-left: $padding-lr_2;
+         padding-right: $padding-lr_2;
+      }
+
+      @include mq(1400) {
+         padding-left: $padding-lr_1;
+         padding-right: $padding-lr_1;
+      }
+      
+      .logo {
+         font-weight: 800;
+         font-size: rem-calc(40);
+         letter-spacing: rem-calc(-1.5);
+      }
+   }
+
+   &_nav {
+      height: 55px;
+      border-top: 1px $white solid;
+   }
+}
