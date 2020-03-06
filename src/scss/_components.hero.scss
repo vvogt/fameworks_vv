@@ -1,0 +1,8 @@
+.hero-mainpage {
+   background-color: rgb(104, 104, 104);
+   height: 300px;
+
+   @include mq(750) {
+      height: calc(100vh - 250px);
+   }
+}
