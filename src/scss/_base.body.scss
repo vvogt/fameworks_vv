@@ -46,31 +46,10 @@ h5 {
 }
 
 h1 {
-  font-size: rem-calc(50);
-  line-height: rem-calc(53);
-  font-weight: 600;
-  
-  @include mq(500) {
-    font-size: rem-calc(60);
-    line-height: rem-calc(65);
-    margin-top: 0px;
-  }
+  font-size: rem-calc(70);
+  line-height: rem-calc(78);
+  font-weight: 1000;
 
-  @include mq(700) {
-    font-size: rem-calc(70);
-    line-height: rem-calc(75);
-    margin-top: 0px;
-  }
-
-  @include mq(1000) {
-    font-size: rem-calc(90);
-    line-height: rem-calc(94);
-    margin-top: 0px;
-  }
-
-  span {
-    color: $orange;
-  }
 }
 
 h2 {

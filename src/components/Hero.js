@@ -1,27 +1,26 @@
 import React from 'react';
-import BgVideo from '../assets/videos/seald_fullhd.mp4';
+
 
 
 class Hero extends React.Component {
    render() {
+      const title = this.props.title;
+      const text = this.props.text;
+      const video = this.props.bgVideo;
+
       return (
-        <div className="hero-mainpage">
+        <div className="hero">
+          <div className="hero__content">
+            <h1>{title}</h1>
+            <p>{text}</p>
+          </div>
           <video
-            className="videoTag"
+            className="hero__bgVideo"
             autoPlay
             muted
             loop
-            style={{
-              position: 'relative',
-              minHeight: '100%',
-              minWidth: '100%',
-              width: '100vw',
-              left: 0,
-              top: 0,
-              transition: 'opacity, 2s ease-in-out'
-            }}
           >
-            <source src={BgVideo} type="video/mp4" />
+            <source src={video} type="video/mp4" />
           </video>
         </div>
       );
