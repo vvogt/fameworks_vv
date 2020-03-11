@@ -6,6 +6,12 @@ import BgVideo from '../assets/videos/seald_fullhd.mp4';
 
 class Main extends React.Component {
    render() {
+      const arr = ["This week", "Don\'t miss", "New releases"]
+      const sections = arr.map(elem => 
+         (
+            <Section tab={elem} />
+         )
+      )
       return (
         <div className="wrapper">
           <Header />
@@ -16,7 +22,8 @@ class Main extends React.Component {
               theatre and visual arts."
             bgVideo={BgVideo}
           />
-          <Section backClass={'dark'} headerText={'Highlight'} tabs={["This week", "Don\'t miss", "New releases"]} />
+         {sections}
+          <Section headerText={'Highlight'} tabs={["This week", "Don\'t miss", "New releases"]} />
         </div>
       );
    }
