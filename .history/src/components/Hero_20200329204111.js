@@ -4,9 +4,9 @@ import React from 'react';
 
 class Hero extends React.Component {
   insertBreak = text => {
-    let lines = text.split("\n");
+    let lines = text.split('\n');
     return (
-      lines[0] + `<br/>` + lines[1]
+      lines[0] + <br/> + lines[1]
     )
   };
 
@@ -14,6 +14,10 @@ class Hero extends React.Component {
     const title = this.props.title;
     const text = this.props.text;
     const video = this.props.bgVideo;
+
+    let newText = text.split('\n').map(i => {
+      return <p>{i}</p>;
+    });
 
     return (
       <div className="hero">

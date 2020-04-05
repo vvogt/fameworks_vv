@@ -127,7 +127,7 @@ class Main extends React.Component {
         <div className="wrapper">
           <Header />
           <Hero
-            title="Welcome \n to the Bardican"
+            title={`Welcome` +  <br/> + `to the Bardican`}
             text="A world-class arts and learning centre, the Barbican pushes the
               boundaries of all major art forms including dance, film, music,
               theatre and visual arts."

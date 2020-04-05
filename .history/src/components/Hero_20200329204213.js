@@ -4,7 +4,7 @@ import React from 'react';
 
 class Hero extends React.Component {
   insertBreak = text => {
-    let lines = text.split("\n");
+    let lines = text.split('\n');
     return (
       lines[0] + `<br/>` + lines[1]
     )
