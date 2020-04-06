@@ -5,11 +5,7 @@ import React from 'react';
 class Hero extends React.Component {
   insertBreak = text => {
     let lines = text.split("<br>");
-    return (
-      <span key={lines[0]}>
-        {lines[0]} <br key={lines[0]} /> {lines[1]}
-      </span>
-    );
+    return lines[0].toString() + <br /> + lines[1].toString();
   };
 
   render() {

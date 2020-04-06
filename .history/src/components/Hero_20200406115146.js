@@ -4,12 +4,12 @@ import React from 'react';
 
 class Hero extends React.Component {
   insertBreak = text => {
-    let lines = text.split("<br>");
-    return (
-      <span key={lines[0]}>
-        {lines[0]} <br key={lines[0]} /> {lines[1]}
-      </span>
-    );
+    let lines = text.split('\n');
+    console.log(lines[0]);
+    console.log(lines[1]);
+    /* return (
+      lines[0] + `<br/>` + lines[1]
+    ) */
   };
 
   render() {

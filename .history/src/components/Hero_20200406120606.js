@@ -7,7 +7,7 @@ class Hero extends React.Component {
     let lines = text.split("<br>");
     return (
       <span key={lines[0]}>
-        {lines[0]} <br key={lines[0]} /> {lines[1]}
+        {lines[0]} + <br key={lines[0]} /> + {lines[1]}
       </span>
     );
   };

@@ -4,12 +4,10 @@ import React from 'react';
 
 class Hero extends React.Component {
   insertBreak = text => {
-    let lines = text.split("<br>");
+    let lines = text.split("\n");
     return (
-      <span key={lines[0]}>
-        {lines[0]} <br key={lines[0]} /> {lines[1]}
-      </span>
-    );
+      lines[0] + `<br/>` + lines[1]
+    )
   };
 
   render() {
@@ -20,7 +18,7 @@ class Hero extends React.Component {
     return (
       <div className="hero">
         <div className="hero__content">
-          <h1>{this.insertBreak(title)}</h1>
+          <h1>{title}</h1>
           <p>{text}</p>
         </div>
         <video className="hero__bgVideo" autoPlay muted loop>

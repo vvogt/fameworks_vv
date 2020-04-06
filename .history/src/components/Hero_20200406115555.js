@@ -6,10 +6,8 @@ class Hero extends React.Component {
   insertBreak = text => {
     let lines = text.split("<br>");
     return (
-      <span key={lines[0]}>
-        {lines[0]} <br key={lines[0]} /> {lines[1]}
-      </span>
-    );
+      lines[0] + <br/> + lines[1]
+    )
   };
 
   render() {
@@ -20,6 +18,7 @@ class Hero extends React.Component {
     return (
       <div className="hero">
         <div className="hero__content">
+          <p>aiaia <br/> aiaia </p>
           <h1>{this.insertBreak(title)}</h1>
           <p>{text}</p>
         </div>
