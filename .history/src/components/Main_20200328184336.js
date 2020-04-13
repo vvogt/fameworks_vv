@@ -133,7 +133,11 @@ class Main extends React.Component {
               theatre and visual arts."
             bgVideo={BgVideo}
           />
-          <Section title="Highlights" content={highlights} activeTab="" />
+          <Section
+            title="Highlights"
+            content={highlights}
+            activeTab="This week"
+          />
         </div>
       );
    }

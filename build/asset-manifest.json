@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/static/js/main.aa4e6e56.chunk.js",
+    "main.js.map": "/static/js/main.aa4e6e56.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.884ce4e0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.884ce4e0.js.map",
+    "static/js/2.e3b13834.chunk.js": "/static/js/2.e3b13834.chunk.js",
+    "static/js/2.e3b13834.chunk.js.map": "/static/js/2.e3b13834.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.155250e62e7e5717ec82acec1bcf770d.js": "/precache-manifest.155250e62e7e5717ec82acec1bcf770d.js",
+    "service-worker.js": "/service-worker.js",
+    "static/js/2.e3b13834.chunk.js.LICENSE.txt": "/static/js/2.e3b13834.chunk.js.LICENSE.txt",
+    "static/media/icon_login_150x150.svg": "/static/media/icon_login_150x150.9f3c1429.svg",
+    "static/media/icon_search_150x150.svg": "/static/media/icon_search_150x150.9a94c828.svg",
+    "static/media/preview.jpg": "/static/media/preview.d4ee0865.jpg",
+    "static/media/seald_fullhd.mp4": "/static/media/seald_fullhd.89cdb497.mp4"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.884ce4e0.js",
+    "static/js/2.e3b13834.chunk.js",
+    "static/js/main.aa4e6e56.chunk.js"
+  ]
+}
