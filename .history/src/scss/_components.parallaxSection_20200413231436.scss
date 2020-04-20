@@ -1,0 +1,33 @@
+.section_parallax {
+   background-color: rgb(255, 162, 162);
+   padding-top: 90px;
+   padding-bottom: 90px;
+   @include setLRPadding($padding_lr);
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+   
+   &__left {
+      max-width: 450px;
+
+      h2, p{
+         color: $white
+      }
+
+      p {
+         margin-top: 15px;
+      }
+   }
+
+   &__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      button {
+         height: 50px;
+         border-style: none;
+
+      }
+   }
+}
