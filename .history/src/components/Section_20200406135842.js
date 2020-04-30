@@ -31,7 +31,6 @@ class Block extends React.Component {
     );
   };
 
-  changeActiveTab = tabName => 
 
   renderCategoryNames = tabs => {
     return Object.keys(tabs).map(category => {
