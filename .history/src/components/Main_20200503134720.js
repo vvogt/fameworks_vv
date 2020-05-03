@@ -9,11 +9,24 @@ import PreviewImageURL from '../assets/images/preview.jpg';
 class Main extends React.Component {
   state = {
     activeTab: 'This week',
+    data: null 
   };
+
+  componentDidMount() {
+    this.fetchData();
+  }
 
   setActiveTab = (tab) => {
     this.setState({ activeTab: tab });
+    console.log(this);
   };
+
+  async fetchData() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    const myData = await response.json();
+    console.log(myData);
+    this.setState({data: myData})
+  }
 
   render() {
 
@@ -281,6 +294,7 @@ class Main extends React.Component {
               theatre and visual arts."
           bgVideo={BgVideo}
         />
+        <h1>{this.state.data}</h1>
         <Section
           title="Highlights"
           content={highlights}

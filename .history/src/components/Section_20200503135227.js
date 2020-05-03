@@ -3,6 +3,20 @@ import { setBgImage } from '../helpers.js';
 import arrowRight from '../assets/icons/icon_arrow_30x30.svg';
 
 class Section extends React.Component {
+  constructor(props) {
+    super(props);
+    if (this.props.content[this.props.activeTab].length < 4) {
+      this.state = {
+        hideArrows: true,
+      };
+      console.log('peidan');
+    } else {
+      this.state = {
+        hideArrows: false,
+      };
+      console.log('ei peida');
+    }
+  }
 
   renderArticles = (tabs, tabName) => {
     return tabs[tabName].map((article, index) => {

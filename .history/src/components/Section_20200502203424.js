@@ -4,10 +4,17 @@ import arrowRight from '../assets/icons/icon_arrow_30x30.svg';
 
 class Section extends React.Component {
 
-  renderArticles = (tabs, tabName) => {
-    return tabs[tabName].map((article, index) => {
+  renderArticles = (tabs, tabName, scrollId) => {
+    console.log('rendering articles')
+
+    if (tabs[tabName].length < 4) {
+      let arrows = document.querySelectorAll(`.arrow,.${scrollId}`);
+      this.setState({hideArrows: true});
+    };
+
+    return tabs[tabName].map((article) => {
       return (
-        <li key={index}>
+        <li key={article.id}>
           <div className="articlePreview">
             <div
               className="arcticlePreview__image"
@@ -49,15 +56,19 @@ class Section extends React.Component {
     });
   }; */
 
+  changeActiveTab = (tabName) => {
+    this.props.activeTab = tabName;
+  };
+
   checkActiveTab = (tab) => {
     return tab === this.props.activeTab ? 'active' : 'inactive';
   };
 
   renderCategoryNames = (tabs) => {
-    return Object.keys(tabs).map((category, index) => {
+    return Object.keys(tabs).map((category) => {
       return (
         <li
-          key={index}
+          key={category}
           className={this.checkActiveTab(category)}
           onClick={() => this.props.setActiveTab(category)}
         >
@@ -87,44 +98,24 @@ class Section extends React.Component {
     let widthToScroll = li.offsetWidth + 20;
     let scrollPos = container.scrollLeft;
 
-    if (direction === 'left') {
+    if(direction === "left") {
       scrollPos -= widthToScroll;
     } else {
       scrollPos += widthToScroll;
     }
-
+    
     container.scroll({
       left: scrollPos,
-      behavior: 'smooth',
+      behavior: 'smooth'
     });
   };
 
-  renderLeftArrow() {
-    return (
-      <button
-        className={`arrow left ${this.props.scrollId}`}
-        onClick={() => this.scrollCarousel(this.props.scrollId, 'left')}
-      >
-        <img src={arrowRight} alt="button arrow" />
-      </button>
-    );
-  }
-
-  renderRightArrow() {
-    return (
-      <button
-        className={`arrow right ${this.props.scrollId}`}
-        onClick={() => this.scrollCarousel(this.props.scrollId, 'right')}
-      >
-        <img src={arrowRight} alt="button arrow" />
-      </button>
-    );
+  constructor(props) {
+    super(props);
+    this.state = {hideArrows: false};
   }
 
   render() {
-    const handleArrows =
-      this.props.content[this.props.activeTab].length > 3 ? true : false;
-    console.log(handleArrows);
 
     return (
       <div className="section_previews">
@@ -133,16 +124,25 @@ class Section extends React.Component {
         {/* Render categories only if the showCategories prop is set to 'true' */}
         {this.renderCategories(this.props.showCategories)}
 
-        {handleArrows && this.renderLeftArrow()}
+        <button
+          className={`arrow left ${this.props.scrollId}`}
+          onClick={() => this.scrollCarousel(this.props.scrollId, 'left')}
+        >
+          <img src={arrowRight} alt="button arrow" />
+        </button>
 
         <div className="articlePreviews" id={this.props.scrollId}>
           <ul>
-            {this.renderArticles(this.props.content, this.props.activeTab)}
+            {this.renderArticles(this.props.content, this.props.activeTab, this.props.scrollId)}
           </ul>
         </div>
 
-        {handleArrows && this.renderRightArrow()}
-
+        <button
+          className="arrow right"
+          onClick={() => this.scrollCarousel(this.props.scrollId, 'right')}
+        >
+          <img src={arrowRight} alt="button arrow" />
+        </button>
       </div>
     );
   }

@@ -13,6 +13,7 @@ class Main extends React.Component {
 
   setActiveTab = (tab) => {
     this.setState({ activeTab: tab });
+    console.log(this);
   };
 
   render() {

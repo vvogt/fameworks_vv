@@ -13,10 +13,15 @@ class Main extends React.Component {
 
   setActiveTab = (tab) => {
     this.setState({ activeTab: tab });
+    console.log(this);
   };
 
-  render() {
+  async fetchData() {
+    const myData = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    console.log(myData);
+  }
 
+  render() {
     const highlights = {
       'This week': [
         {

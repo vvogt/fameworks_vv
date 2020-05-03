@@ -3,11 +3,29 @@ import { setBgImage } from '../helpers.js';
 import arrowRight from '../assets/icons/icon_arrow_30x30.svg';
 
 class Section extends React.Component {
+  constructor(props) {
+    super(props);
+    if (this.props.content[this.props.activeTab].length < 4) {
+      this.state = {
+        hideArrows: true,
+      };
+      console.log('peidan');
+    } else {
+      this.state = {
+        hideArrows: false,
+      };
+      console.log('ei peida');
+    }
+  }
 
   renderArticles = (tabs, tabName) => {
+    if (tabs[tabName].length < 4) {
+      //this.setState({ hideArrows: true });
+    }
+
     return tabs[tabName].map((article, index) => {
       return (
-        <li key={index}>
+        <li key={article.id}>
           <div className="articlePreview">
             <div
               className="arcticlePreview__image"
@@ -99,6 +117,19 @@ class Section extends React.Component {
     });
   };
 
+  renderLeftArrow1(hide) {
+    if (!hide) {
+      return (
+        <button
+          className={`arrow left ${this.props.scrollId}`}
+          onClick={() => this.scrollCarousel(this.props.scrollId, 'left')}
+        >
+          <img src={arrowRight} alt="button arrow" />
+        </button>
+      );
+    }
+  }
+
   renderLeftArrow() {
     return (
       <button
@@ -119,6 +150,19 @@ class Section extends React.Component {
         <img src={arrowRight} alt="button arrow" />
       </button>
     );
+  }
+
+  renderRightArrow1(hide) {
+    if (!hide) {
+      return (
+        <button
+          className={`arrow right ${this.props.scrollId}`}
+          onClick={() => this.scrollCarousel(this.props.scrollId, 'right')}
+        >
+          <img src={arrowRight} alt="button arrow" />
+        </button>
+      );
+    }
   }
 
   render() {

@@ -8,15 +8,15 @@ import PreviewImageURL from '../assets/images/preview.jpg';
 
 class Main extends React.Component {
   state = {
-    activeTab: 'This week',
+    activeTab: "This week"
   };
 
-  setActiveTab = (tab) => {
-    this.setState({ activeTab: tab });
-  };
+  setActiveTab = tab => {
+    this.setState({activeTab: tab});
+    console.log(this);
+  }
 
   render() {
-
     const highlights = {
       'This week': [
         {
@@ -36,7 +36,7 @@ class Main extends React.Component {
           description: 'Something something something...',
           imageUrl: PreviewImageURL,
           ID: 3,
-        },
+        }
       ],
       "Don't miss": [
         {
@@ -299,7 +299,7 @@ class Main extends React.Component {
           title="Make the most of your visit"
           content={makeTheMost}
           numToRender={6}
-          activeTab={'Make the most of your visit'}
+          activeTab={"Make the most of your visit"}
           scrollId="scroll2"
         />
       </div>
