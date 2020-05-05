@@ -1,0 +1,12 @@
+.section_signup {
+   display: flex;
+   background-color: $orange;
+   color: $white;
+   justify-content: space-between;
+
+   img {
+      width: 300px;
+      position: relative;
+      bottom: 0;
+   }
+}

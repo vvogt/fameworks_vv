@@ -1,0 +1,137 @@
+/* ------------------------------------------
+   tools.MIXINS
+------------------------------------------ */
+
+@mixin clearfix() {
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin un-clearfix() {
+  &:before, &:after {
+    content: none;
+    display: auto;
+  }
+  &:after {
+    clear: none;
+  }
+}
+
+// Image Replacement
+
+@mixin ir() {
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  // background: url(test.png);
+  // width: 300px;
+  // height: 75px;
+}
+
+// Hide only visually, but have it available for screen readers:
+// http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+
+@mixin visuallyhidden() {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+
+//  ## Media query and orietation mixins
+//  ==================================================
+//  http://alwaystwisted.com/post.php?s=2013-04-01-my-media-query-mixin
+
+
+@mixin mq($point, $query1: min, $query2: width) {
+  @media screen and (#{$query1}-#{$query2}: strip-unit($point) / 16 +em) {
+    @content;
+  }
+}
+
+@mixin orient($orientation: landscape) {
+  @media (orientation : $orientation) {
+    @content;
+  }
+}
+
+@mixin setLRPadding($padding-lr4: 20px, $padding-lr3: 80px, $padding-lr2: 140px, $padding-lr1: 240px) {
+  padding-left: $padding-lr4;
+  padding-right: $padding-lr4;
+
+   @include mq(600) {
+      padding-left: $padding-lr3;
+      padding-right: $padding-lr3;
+   }
+
+   @include mq(1150) {
+      padding-left: $padding-lr2;
+      padding-right: $padding-lr2;
+   }
+
+   @include mq(1400) {
+      padding-left: $padding-lr1;
+      padding-right: $padding-lr1;
+   }
+}
+
+@mixin setLRPadding-preview($padding-lr4: 15px, $padding-lr3: 75px, $padding-lr2: 135px, $padding-lr1: 235px) {
+  padding-left: $padding-lr4;
+  padding-right: $padding-lr4;
+
+   @include mq(600) {
+      padding-left: $padding-lr3;
+      padding-right: $padding-lr3;
+   }
+
+   @include mq(1150) {
+      padding-left: $padding-lr2;
+      padding-right: $padding-lr2;
+   }
+
+   @include mq(1400) {
+      padding-left: $padding-lr1;
+      padding-right: $padding-lr1;
+   }
+}
+
+@mixin buttonWithArrow($bgColor, $color) {
+  button {
+    background-color: $bgColor;
+    color: $color;
+    margin-left: 5vw;
+
+    border-style: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 15px;
+    font-weight: 800;
+    flex: none;
+    flex-grow: 0;
+
+    &:before {
+      display: inline-block;
+      content: " ";
+      background-image: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 83.2 80.9"><path fill="%23#{str-replace($color, "#", "")}" d="M42.8.4L31.9 11.2l23.7 22.2H0V48h55.6l-24 21.6 11.2 11.3 40.4-40.7z"></path></svg>');
+      background-size: 1.7ex 1.7ex;
+      width: 1.7ex;
+      height: 1.7ex;
+      margin-right: 13px;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+}
+
+

@@ -1,0 +1,45 @@
+.categoryTabs {
+      width: 100%;
+      margin-bottom: 35px;
+      padding-left: 10px;
+      padding-right: 10px;
+      
+      h3 {
+         font-size: 17px;
+         color: $gray-dark;
+         font-weight: 700;
+         padding-left: 10px;
+      }
+      
+      ul {
+         display: flex;
+         flex-direction: row;
+         -ms-flex-align: left;
+         
+         li {
+            padding: 3px 15px;
+            border-bottom: 3px solid rgba($orange, .25);
+            cursor: default;
+         }
+
+         li.active {
+            border-bottom: 3px solid $orange;
+
+            h3 {
+               color: $orange;
+            }
+         }
+
+         li:hover:not(:last-of-type):not(.active) {
+            border-bottom: 3px solid $orange;
+
+            h3 {
+               color: $black;
+            }
+         }
+
+         li:last-of-type {
+            flex-grow: 1;
+         }
+      }
+   }

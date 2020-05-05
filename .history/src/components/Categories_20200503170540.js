@@ -1,0 +1,36 @@
+import React from 'react';
+
+class Categories extends React.Component {
+  checkActiveTab = (tab) => {
+    return tab === this.props.activeTab ? 'active' : 'inactive';
+  };
+
+  renderCategoryNames = (tabs) => {
+    return Object.keys(tabs).map((category, index) => {
+      return (
+        <li
+          key={index}
+          className={this.checkActiveTab(category)}
+          onClick={() => this.props.setActiveTab(category)}
+        >
+          <h3>{category}</h3>
+        </li>
+      );
+    });
+  };
+
+  renderCategories = (renderOrNot) => {
+    if (renderOrNot) {
+      return (
+        <div className="categoryTabs">
+          <ul>
+            {this.renderCategoryNames(this.props.content)}
+            <li key="emptySpace"></li>
+          </ul>
+        </div>
+      );
+    }
+  };
+
+  
+}

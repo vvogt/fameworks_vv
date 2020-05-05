@@ -1,0 +1,16 @@
+.section_directions {
+   padding-top: rem-calc(100);
+   padding-bottom: rem-calc(100);
+   position: relative;
+   display: flex;
+   @include setLRPadding;
+   
+   h2 {
+      margin-bottom: 35px;
+      padding-left: 10px;
+   }
+
+   &__map {
+      width: 50%;
+   }
+}
