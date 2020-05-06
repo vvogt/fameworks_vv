@@ -269,35 +269,6 @@ class Main extends React.Component {
       ],
     };
 
-    const contactOptions = {
-      "Your booking": {
-        title: "Contact the Box Office",
-        description:
-          "For queries relating to your booking, please see our FAQs or contact us on:",
-        mail: 'tickets@barbican.org.uk',
-        mailInfo: "We aim to respond within 24 hrs",
-      },
-      "Feedback": {
-        title: 'How was your experience?',
-        description:
-          "We are committed to ensuring you have a great experience. It's good to hear when we exceed your expectations... and when we could do better.",
-        mail: 'info@barbican.org.uk',
-      },
-      "Membership": {
-        title: "Membership",
-        description: "Have a question about membership? Read our FAQs or contact us below",
-        mail: "barbican.membership@barbican.org.uk",
-        phone: "020 7638 8891",
-        phoneInfo: "Opening hours"
-      },
-      "Hiring a venue": {
-        title: "Contact the Business Events team",
-        mail: "businessevents@barbican.org.uk",
-        phone: "+44 (0)20 7382 7043"
-      },
-
-    };
-
     return (
       <div className="wrapper">
         <Header />
@@ -342,7 +313,7 @@ class Main extends React.Component {
         />
         <FooterSection
           title="Contacts"
-          contactOptions={contactOptions}
+          
 
         />
 

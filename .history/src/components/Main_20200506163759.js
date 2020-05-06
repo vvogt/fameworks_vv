@@ -295,7 +295,7 @@ class Main extends React.Component {
         mail: "businessevents@barbican.org.uk",
         phone: "+44 (0)20 7382 7043"
       },
-
+      
     };
 
     return (
@@ -342,7 +342,7 @@ class Main extends React.Component {
         />
         <FooterSection
           title="Contacts"
-          contactOptions={contactOptions}
+
 
         />
 
