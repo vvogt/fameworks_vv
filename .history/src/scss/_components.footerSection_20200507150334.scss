@@ -1,0 +1,15 @@
+.contacts {
+   background-color: $black;
+   color: $white;
+
+   @include setLRPadding;
+
+   h2 {
+      margin-bottom: 35px;
+      padding-left: 10px;
+   }
+
+   a {
+      color: $white;
+   }
+}

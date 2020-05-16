@@ -1,0 +1,6 @@
+.contacts {
+   background-color: $black;
+   color: $white;
+
+   @include setLRPadding;
+}

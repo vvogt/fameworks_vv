@@ -1,0 +1,29 @@
+.section_parallax {
+   background-color: rgb(255, 162, 162);
+   padding-top: $padding-top;
+   padding-bottom: $padding-bottom;
+   @include setLRPadding;
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+   
+   &__left {
+      max-width: 450px;
+
+      h2, p{
+         color: $white
+      }
+
+      p {
+         margin-top: 15px;
+      }
+   }
+
+   &__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      @include buttonWithArrow($white, $black);
+   }
+}

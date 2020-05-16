@@ -1,0 +1,42 @@
+.contacts {
+   background-color: $black;
+   color: $white;
+   padding-top: $padding-top;
+   padding-bottom: $padding-bottom;
+   
+   @include setLRPadding;
+   
+   h2 {
+      margin-bottom: 35px;
+      padding-left: 10px;
+   }
+   
+   a,p {
+      color: $white;
+   }
+   
+   &__content {
+      display: flex;
+
+      &__left {
+         label {
+            font-weight: 800;
+            margin-right: 50px;
+         }
+
+         select {
+            color: $white;
+            background-color: $black;
+            border: 1px solid $white;
+            padding: 5px 5px;
+            font-weight: 800;
+         }
+      }
+
+      &__right {
+         width: 66%;
+         padding-left: 50px;
+      }
+      
+   }
+}

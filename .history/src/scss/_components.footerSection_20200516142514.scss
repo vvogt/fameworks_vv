@@ -1,0 +1,180 @@
+.contact {
+   background-color: $black;
+   color: $white;
+   padding-top: $padding-top;
+   padding-bottom: $padding-bottom;
+   
+   @include setLRPadding;
+   
+   h2 {
+      margin-bottom: 35px;
+   }
+
+   p, a {
+      color: $white;
+   }
+   
+   &__content {
+      margin-top: 50px;
+      display: flex;
+      padding-bottom: 2em;
+
+      p {
+         font-size: rem-calc(13.5);
+      }
+
+
+      &__left {
+         width: 34%;
+         font-size: rem-calc(17);
+         line-height: rem-calc(25);
+         display: flex;
+         flex-wrap: wrap;
+
+         label {
+            font-weight: 800;
+            margin-right: 10px;
+            padding-top: .5em;
+            flex-grow: none;
+            height: 20px;
+         }
+
+         select {
+            color: $white;
+            background-color: $black;
+            border: 1px solid $gray-dark;
+            padding: .5em;
+            font-weight: 800;
+            height: 38px;
+            flex-grow: 1;
+            min-width: 267px;
+         }
+      }
+
+      .top {
+         padding-bottom: 2em;
+         h3 {
+            margin-bottom: .3em;
+         }
+      }
+
+      &__right {
+         width: 66%;
+         padding-left: 20px;
+         display: flex;
+         flex-direction: column;
+
+         h3 {
+            font-size: rem-calc(28px);
+            margin-bottom: .75em;
+         }
+
+         .bottom {
+            display: flex;
+            flex-direction: row;
+
+            a {
+               font-size: rem-calc(19.5);
+               line-height: rem-calc(24);
+               font-weight: 800;
+            }
+
+            .mail:before {
+               display: inline-block;
+               content: ' ';
+               background-size: 28px 28px;
+               background-image: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="-35.1 54.7 120.5 91.4"><path fill="%23ffffff" d="M76.6 131.8l-31.3-31.3 31.2-31.3.1 62.6zm-97.6 5.9l31.3-31.2 1.3 1.3c7.4 7 19.1 7 26.2 0l1.3-1.3 31.5 31.3c.1-.1-91.6-.1-91.6-.1zm-5.6-68.5l31.2 31.3-31.3 31.3.1-62.6zm97.2-5.9l-38.4 38.4c-3.9 3.9-10.9 3.8-14.9-.2l-38.2-38.3h91.5zm-105.7-8.6v91.4H85.4V54.7H-35.1z"></path></svg>');
+               height: 28px;
+               width: 28px;
+               background-repeat: no-repeat;
+               background-position: center center;
+            }
+
+            .mail_info {
+               margin-left: 28px;
+            }
+         };
+      }
+   }
+
+   &__footer {
+   height: 100px;
+   border-top: 1px solid $gray-dark;
+   border-bottom: 1px solid $gray-dark;
+   display: flex;
+
+      &__left {
+         width: 34%;
+         height: 100%;
+         display: flex;
+         align-items: center;
+         padding-top: 20px;
+         padding-bottom: 20px;
+
+         p {
+            margin-top: 20px;
+            font-size: rem-calc(9);
+            line-height: rem-calc(12);
+            padding-left: 20px;
+            width: 155px;
+         }
+
+         img {
+            width: 55px;
+         }
+      }
+
+      &__center {
+         height: 100%;
+         min-width: 10px;
+         flex-grow: 1;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         justify-content: center;
+
+         p {
+            font-size: rem-calc(12);
+            font-weight: 800;
+            margin-bottom: 7px;
+         }
+
+         img {
+            width: 140px;
+         }
+      }
+
+      &__right {
+         width: 189px;
+         border-left: 1px solid $gray-dark;
+         display: flex;
+         justify-content: space-between;
+         padding-left: 25px;
+         align-items: center;
+
+         img {
+            width: 35px;
+            height: 35px;
+         }
+      }
+   }
+
+   &__bottom-links {
+      padding-top: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      
+      a {
+         font-size: rem-calc(11.5);
+         margin-right: 30px;
+      }
+      
+      p {
+         font-size: rem-calc(11.5);
+         color: $gray-dark;
+      }
+
+
+   }
+}

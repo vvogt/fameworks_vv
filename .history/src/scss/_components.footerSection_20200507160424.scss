@@ -1,0 +1,54 @@
+.contacts {
+   background-color: $black;
+   color: $white;
+   padding-top: $padding-top;
+   padding-bottom: $padding-bottom;
+   
+   @include setLRPadding;
+   
+   h2 {
+      margin-bottom: 35px;
+      padding-left: 10px;
+   }
+   
+   a,p {
+      color: $white;
+   }
+   
+   &__content {
+      margin-top: 50px;
+      display: flex;
+
+      &__left {
+         width: 34%;
+         font-size: rem-calc(17);
+         display: flex;
+
+         label {
+            font-weight: 800;
+            margin-right: 10px;
+            padding-top: .5em;
+         }
+
+         select {
+            color: $white;
+            background-color: $black;
+            border: 1px solid $gray-dark;
+            padding: .5em;
+            font-weight: 800;
+            height: 38px;
+         }
+      }
+
+      &__right {
+         width: 66%;
+         padding-left: 20px;
+
+         h3 {
+            font-size: rem-calc(28px);
+            margin-bottom: .75em;
+         }
+      }
+      
+   }
+}

@@ -1,0 +1,17 @@
+.contacts {
+   background-color: $black;
+   color: $white;
+   padding-top: rem-calc(50);
+   padding-bottom: rem-calc(50);
+
+   @include setLRPadding;
+
+   h2 {
+      margin-bottom: 35px;
+      padding-left: 10px;
+   }
+
+   a,p {
+      color: $white;
+   }
+}
