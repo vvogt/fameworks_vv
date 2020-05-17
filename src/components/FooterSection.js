@@ -12,7 +12,6 @@ class FooterSection extends React.Component {
    }
 
    renderOptions = (options) => {
-      console.log(options);
       return options.map((optionName, index) => {
          return <option value={optionName} key={index}>{optionName}</option>
       });
@@ -24,7 +23,6 @@ class FooterSection extends React.Component {
          activeOption: value,
          currentContent: this.props.contactOptions[value]
       })
-      console.log(this.state);
    }
 
    render() {

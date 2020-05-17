@@ -1,29 +1,56 @@
 .hero {
    background-color: rgb(104, 104, 104);
-   height: 300px;
+   height: 350px;
    position: relative;
 
    @include setLRPadding();
 
+   @include mq(400) {
+      height: 300px;
+   }
+
    @include mq(750) {
+      height: calc(100vh - 500px);
+   }
+
+   @include mq(1000) {
       height: calc(100vh - 250px);
    }
 
    &__content {
       position: absolute;
       z-index: 2;
-      margin-top: 200px;
-      margin-bottom: 200px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+      @include mq(750) {
+         margin-top: 150px;
+      }
+
+      @include mq(1000) {
+         margin-top: 250px;
+      }
 
       h1, p {
          color: $white;
       }
 
       p {
-         width: 70%;
+         font-size: rem-calc(15);
+         width: 100%;
+
+         @include mq(600) {
+            width: 80%;
+         }
+
+         @include mq(750) {
+            font-size: rem-calc(20);
+            line-height: rem-calc(25);
+            width: 70%;
+         }
 
          @include mq(1000) {
-            width: 60%;
+            width: 50%;
          }
       }
    }

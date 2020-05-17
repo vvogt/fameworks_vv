@@ -4,8 +4,10 @@
    padding-bottom: $padding-bottom;
    @include setLRPadding;
    display: flex;
-   flex-wrap: nowrap;
+   flex-wrap: wrap;
    justify-content: space-between;
+
+
    
    &__left {
       max-width: 450px;
@@ -26,6 +28,11 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      margin-top: 50px;
+
+      @include mq(753) {
+         margin-top: 0;
+      }
       
       @include buttonWithArrow($white, $black);
    }

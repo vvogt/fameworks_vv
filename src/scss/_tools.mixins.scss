@@ -81,7 +81,7 @@
       padding-right: $padding-lr3;
    }
 
-   @include mq(1300) {
+   @include mq(1400) {
      padding-left: $padding-lr4;
      padding-right: $padding-lr4;
    }
@@ -102,7 +102,7 @@
       padding-right: calc(#{$padding-lr3} - 10px);
    }
 
-    @include mq(1300) {
+    @include mq(1400) {
       padding-left: calc(#{$padding-lr4} - 10px);
       padding-right: calc(#{$padding-lr4} - 10px);
     }

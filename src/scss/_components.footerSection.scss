@@ -18,6 +18,11 @@
       margin-top: 50px;
       display: flex;
       padding-bottom: 3em;
+      flex-direction: column;
+
+      @include mq(850) {
+         flex-direction: row;
+      }
 
       p {
          font-size: rem-calc(13.5);
@@ -25,11 +30,16 @@
 
 
       &__left {
-         width: 34%;
+         width: 100%;
          font-size: rem-calc(17);
          line-height: rem-calc(25);
          display: flex;
          flex-wrap: wrap;
+         padding-bottom: 40px;
+
+         @include mq(850) {
+            width: 34%;
+         }
 
          label {
             font-weight: 800;
@@ -47,7 +57,8 @@
             font-weight: 800;
             height: 38px;
             flex-grow: 1;
-            min-width: 267px;
+            min-width: 150px;
+            max-width: 300px;
          }
       }
 
@@ -59,10 +70,15 @@
       }
 
       &__right {
-         width: 66%;
-         padding-left: 20px;
+         width: 100%;
+         padding-left: 0px;
          display: flex;
          flex-direction: column;
+
+         @include mq(850) {
+            width: 66%;
+            padding-left: 20px;
+         }
 
          h3 {
             font-size: rem-calc(28px);
@@ -72,6 +88,7 @@
          .bottom {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
 
             a {
                font-size: rem-calc(19.5);
@@ -81,6 +98,7 @@
 
             .mail {
                margin-right: 30px;
+               padding-bottom: 20px;
             }
 
             .mail:before {
@@ -119,18 +137,36 @@
    }
 
    &__footer {
-   height: 100px;
    border-top: 1px solid $gray-dark;
    border-bottom: 1px solid $gray-dark;
    display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+   @include mq(680) {
+      flex-direction: row;
+      height: 100px;
+      justify-content: space-between;
+   }
 
       &__left {
-         width: 34%;
+         width: 100%;
          height: 100%;
          display: flex;
          align-items: center;
          padding-top: 20px;
          padding-bottom: 20px;
+         padding-right: 20px;
+         border-bottom: 1px solid $gray-dark;
+         justify-content: center;
+         order: 3;
+         
+         @include mq(680) {
+            border-bottom: 0px;
+            width: 34%;
+            justify-content: flex-start;
+            order: 1;
+         }
 
          p {
             margin-top: 20px;
@@ -146,13 +182,22 @@
       }
 
       &__center {
+         order: 2;
          height: 100%;
          min-width: 10px;
          flex-grow: 1;
          display: flex;
          flex-direction: column;
-         align-items: flex-start;
+         align-items: center;
          justify-content: center;
+         padding-top: 20px;
+         padding-bottom: 20px;
+         border-bottom: 1px solid $gray-dark;
+         
+         @include mq(680) {
+            align-items: flex-start;
+            border-bottom: 0px;
+         }
 
          p {
             font-size: rem-calc(12);
@@ -166,16 +211,35 @@
       }
 
       &__right {
-         width: 189px;
-         border-left: 1px solid $gray-dark;
+         order: 1;
+         width: 100%;
+         border-left: 0px;
          display: flex;
-         justify-content: space-between;
-         padding-left: 25px;
+         padding-left: 0px;
+         padding-top: 20px;
+         padding-bottom: 20px;
          align-items: center;
+         justify-content: center;
+         border-bottom: 1px solid $gray-dark;
+         
+         @include mq(680) {
+            order: 3;
+            border-left: 1px solid $gray-dark;
+            padding-left: 25px;
+            justify-content: space-between;
+            width: 189px;
+            border-bottom: none;
+         }
 
          img {
             width: 35px;
             height: 35px;
+            margin-left: 20px;
+            margin-right: 20px;
+            
+            @include mq(680) {
+               margin: 0;
+            }
          }
       }
    }
@@ -184,18 +248,45 @@
       padding-top: 20px;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      @include mq(680) {
+         flex-direction: row;
+         justify-content: space-between;
+         align-items: flex-start;
+      }
       
+      nav {
+         flex-grow: 1;
+         display: flex;
+         justify-content: center;
+
+         @include mq(780) {
+            justify-content: flex-start;
+         }
+      }
+
       a {
          font-size: rem-calc(11.5);
          margin-right: 30px;
+
+         &:last-of-type {
+            margin-right: 0px;
+         }
       }
       
       p {
          font-size: rem-calc(11.5);
          color: $gray-dark;
+         padding-top: 4px;
+         text-align: center;
+         width: 100%;
+
+         @include mq(780) {
+            width: auto;
+         }
       }
-
-
    }
 }

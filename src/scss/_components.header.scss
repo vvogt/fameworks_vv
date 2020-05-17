@@ -4,6 +4,8 @@
    display: flex;
    flex-direction: column;
    color: white;
+   position: relative;
+   z-index: 4;
    
    &__main {
       height: 55px;
@@ -144,38 +146,174 @@
    }
 
    &__nav {
-      height: 55px;
-      border-top: 1px $white solid;
-      border-color: rgba(255, 255, 255, 0.5);
-      padding-left: $padding-lr_4;
-      overflow: scroll;
-      -ms-overflow-style: none;  // IE 10+
-      overflow: -moz-scrollbars-none;  // Firefox
 
-      &::-webkit-scrollbar {
-         display: none;
+      &_categories {
+         height: 55px;
+         border-top: 1px $white solid;
+         border-color: rgba(255, 255, 255, 0.5);
+         padding-left: $padding-lr_4;
+         overflow: scroll;
+         -ms-overflow-style: none;  // IE 10+
+         overflow: -moz-scrollbars-none;  // Firefox
+
+         &::-webkit-scrollbar {
+            display: none;
+         }
+
+         @include setLRPadding()
+
+         ul {
+            font-weight: 800;
+            font-size: rem-calc(14);
+            display: flex;
+            flex-direction: row;
+            width: 1000px;
+            height: 100%;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+
+            li.withArrow:after {
+               display: inline-block;
+               content: ' ';
+               background-size: 10px 10px;
+               background-image: url('data:image/svg+xml;utf8, <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="45.8px" height="29.6px" viewBox="0 0 45.8 29.6" style="overflow:visible;enable-background:new 0 0 45.8 29.6;" xml:space="preserve"> <style type="text/css"> .st0{fill:%23FFFFFF;} </style> <defs> </defs> <g> <polygon class="st0" points="40,29.6 22.9,11.6 5.8,29.6 0,24 22.9,0 45.8,24"/> </g> </svg>');
+               position: relative;
+               height: 10px;
+               width: 10px;
+               background-repeat: no-repeat;
+               background-position: center center;
+               margin-left: 10px;
+               transform: rotate(-180deg);
+            }
+         }
       }
       
-      @include mq(600) {
-         padding-left: $padding-lr_3;
-      }
-
-      @include mq(1000) {
-         padding-left: $padding-lr_2;
-      }
-
-      @include mq(1400) {
-         padding-left: $padding-lr_1;
-      }
-
-      ul {
-         font-weight: 800;
+      &_menu-open {
+         padding-bottom: 100px;
+         padding-top: 50px;
+         width: 100%;
+         background-color: #fff;
          display: flex;
          flex-direction: row;
-         width: 1000px;
-         height: 100%;
-         justify-content: space-between;
-         align-items: center;
+         justify-content: flex-start;
+         z-index: 10;
+         position: absolute;
+
+         @include setLRPadding;
+         
+         h3 {
+            color: $orange;
+            font-size: rem-calc(18);
+            margin-bottom: 50px;
+         }
+
+         a {
+            color: $black;
+            font-size: rem-calc(14);
+         }
+
+         .menu_column {
+            width: 180px;
+            margin-right: 30px;
+         }
+
+         .menu_column.bulletList .button {
+            background-color: $orange;
+            color: $white;
+            border-style: none;
+            border-radius: 5px;
+            padding: 20px 30px 18px;
+            font-size: 15px;
+            font-weight: 800;
+         }
+
+         .menu_column.bulletList .button:before {
+               display: inline-block;
+               content: ' ';
+               background-size: 12px 12px;
+               background-image: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="86.1 564.1 800 800"><path fill="%23ffffff" d="M86.1 564.1h72v800h-72zM814.1 564.1h72v800h-72z"></path><path fill="%23ffffff" d="M86.1 564.1h800v72h-800zM86.1 709h800v72h-800zM86.1 1292.1h800v72h-800zM233.1 998.1h72v72h-72zM378.1 998.1h72v72h-72zM523.1 998.1h72v72h-72zM233.1 1143.1h72v72h-72zM378.1 1143.1h72v72h-72zM523.1 1143.1h72v72h-72zM668.1 998.1h72v72h-72zM378.1 854.1h72v72h-72zM523.1 854.1h72v72h-72zM668.1 854.1h72v72h-72z"></path></svg>');
+               position: relative;
+               height: 12px;
+               width: 12px;
+               background-repeat: no-repeat;
+               background-position: center center;
+               margin-right: 6px;
+         }
+
+         .menu_column.bulletList {
+            width: 50%;
+         }
+
+         .menu_column.bulletList h3, .menu_column.gallery h3 {
+            font-size: rem-calc(24);
+            letter-spacing: -.045em;
+         }
+
+         .menu_column.bulletList ul {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            max-height: 180px;
+            justify-content: space-between;
+            margin-bottom: 50px;
+         }
+
+         .menu_column.bulletList li {
+            margin-bottom: 15px;
+
+            &:before {
+               content: '';
+               display: inline-block;
+               width: 13px;
+               height: 13px;
+               border-radius: 6.5px;
+               background-color: $orange;
+               margin-right: 10px;
+            }
+         }
+         
+         .menu_column.bulletList a {
+            font-size: rem-calc(14.8);
+            font-weight: 800;
+         }
+
+         .menu_column ul li {
+            margin-bottom: 17px;
+         }
+
+         .menu_column.gallery {
+            width: 50%;
+         }
+
+         .menu_column.gallery ul {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            justify-content: space-between;
+         }
+
+         .menu_column.gallery li {
+            width: 32%;
+         }
+
+         .menu_column.gallery h4 {
+            color: $black;
+            font-weight: 800;
+            font-size: rem-calc(15);
+            margin-top: 10px;
+         }
+
+         .menu_column.gallery p {
+            color: $gray-dark;
+            font-weight: 800;
+            font-size: rem-calc(14);
+            margin-top: 5px;
+         }
+
+         .menu_column.gallery .previewImage {
+            width: 100%;
+         }
       }
    }
 }

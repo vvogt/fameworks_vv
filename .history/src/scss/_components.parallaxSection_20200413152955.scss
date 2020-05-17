@@ -1,7 +1,0 @@
-.section_parallax {
-   background-color: rgb(255, 162, 162);
-   padding-top: 50px;
-   padding-bottom: 50px;
-   @include setLRPadding($padding_lr);
-   display: flex;
-}

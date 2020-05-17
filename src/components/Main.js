@@ -14,6 +14,17 @@ import PreviewImageURL from '../assets/images/preview.jpg';
 import BgVideo from '../assets/videos/seald_fullhd.mp4';
 
 class Main extends React.Component {
+  state = {
+    headerMenuIsOpen: false,
+  }
+
+  handleHeaderMenu = (input) => {
+    console.log('show menu:' + input)
+    this.setState({
+      headerMenuIsOpen: input,
+    })
+  }
+
   render() {
     const highlights = {
       'This week': [
@@ -286,7 +297,7 @@ class Main extends React.Component {
       "Membership": {
         title: "Membership",
         description: "Have a question about membership? Read our FAQs or contact us below",
-        mail: "barbican.membership@barbican.org.uk",
+        mail: "membership@barbican.org.uk",
         phone: "020 7638 8891",
         phoneInfo: "Opening hours"
       },
@@ -298,9 +309,282 @@ class Main extends React.Component {
 
     };
 
+    const mainNav = {
+      "What's on": [
+        {
+          title: 'Find events',
+          type: 'bulletList',
+          content: [
+            "Art & design",
+            "Talks & workshops",
+            "Cinema",
+            "Theatre & dance",
+            "Classical music",
+            "Tours & public spaces",
+            "Contemporary music",
+            "Library"
+          ]
+        },
+        {
+          title: "Highlights",
+          type: "gallery",
+          content: [{
+              title: "Level G",
+              description: "Always open, always free",
+              image: PreviewImageURL
+            },
+            {
+              title: "Eat & Drink",
+              description: "Our cafes, restaurants and bars",
+              image: PreviewImageURL
+            },
+            {
+              title: "Inside out",
+              description: "Exporing our inner lives",
+              image: PreviewImageURL
+            }
+          ]
+        }
+      ],
+      "Your visit": [
+        {
+          title: "General info",
+          content: [
+            "Coronavirus Advice",
+            "Box office & ticketing info",
+            "Opening hours",
+            "Map & directions",
+            "Car parking",
+            "Families",
+            "Cloakrooms",
+            "Contact us"
+          ]
+        },
+        {
+          title: "During your visit",
+          content: [
+            "Free things to do",
+            "Barbican Tours",
+            "Library",
+            "Shops",
+            "Conservatory",
+            "Explore Culture Mile",
+          ]
+        },
+        {
+          title: "Eat & Drink",
+          content: [
+            "Barbican Kitchen",
+            "Bonfire",
+            "Osteria",
+            "Martini bar",
+            "Foyer bars and cafe",
+            "Cinema Cafe & Bar"
+          ]
+        },
+        {
+          title: "Accessibility",
+          content: [
+            "Access membership",
+            "Accessible events",
+            "Access guides",
+            "Access maps",
+            "Accessible facilities",
+          ]
+        }
+      ],
+      "Join & support": [
+        {
+          title: "Membership",
+          content: [
+            "Member benefits",
+            "Members' Lounge",
+            "Members' events",
+            "Special offers",
+          ]
+        },
+        {
+          title: "Young Barbican",
+          content: [
+            "Join Young Barbican",
+            "Young Barbican events",
+            "Get creative",
+          ]
+        },
+        {
+          title: "Support us",
+          content: [
+            "Support us",
+            "Support our appeal",
+            "For individuals",
+            "For businesses",
+            "How your support helps",
+            "Trusts & grantmakers",
+            "Barbican Centre Trust",
+            "Current supporters",
+          ]
+        },
+        {
+          type: "gallery",
+          title: "Support the Barbican",
+          content: [
+            {
+              title: "Young barbican",
+              description: "Age 14 - 25 ? Get discounted access to unmissable art",
+              image: PreviewImageURL
+            },
+            {
+              title: "Rain room dancers",
+              description: "All arts.All year.One Membership",
+              image: PreviewImageURL
+            },
+            {
+              title: "Support us",
+              description: "",
+              image: PreviewImageURL
+            }
+          ]
+        }
+      ],
+      "Take part": [
+        {
+          title: "Schools & colleges",
+          content: [
+            "Barbican Box",
+            "Primary Schools",
+            "Secondary Schools",
+            "Further Education",
+          ]
+        },
+        {
+          title: "Young creatives",
+          content: [
+            "Design Yourself",
+            "Young Curators",
+            "Young Poets",
+            "Youth Panel",
+            "Young Programmers",
+            "Young Visual Arts Group",
+            "Creative Careers",
+            "National Open Youth Orchestra(NOYO)",
+          ]
+        },
+        {
+          title: "Emerging & Practising Artists",
+          content: [
+            "Open Lab",
+            "Weekend Labs",
+            "Guildhall School",
+            "STAMP",
+          ]
+        },
+        {
+          title: "Community",
+          content: [
+            "Beyond Barbican",
+            "Programmes",
+          ]
+        }
+      ],
+      "Our story": [
+        {
+          title: "Our archive",
+          content: [
+            "About the archive",
+            "Construction",
+            "Programme",
+            "Design",
+            "Research & Talks",
+          ]
+        },
+        {
+          title: "Our building",
+          content: [
+            "Our architecture",
+            "Our venues",
+            "Sustainability",
+          ]
+        },
+        {
+          title: "Our people",
+          content: [
+            "Who we are",
+            "Careers",
+            "Centre Partners",
+            "Residents",
+          ]
+        },
+        {
+          title: "Our programme",
+          content: [
+            "Our artistic vision",
+            "Music",
+            "Theatre & dance",
+            "Visual arts",
+            "Cinema",
+            "Creative Learning",
+            "International work",
+          ]
+        },
+        {
+          title: "Our projects",
+          content: [
+            "Centre for Music",
+            "Culture Mile",
+            "Inside Out",
+            "Life Rewired",
+          ]
+        }
+      ],
+      "Hire": [
+        {
+          title: "Venue Hire",
+          content: [
+            "Venues",
+            "What we offer",
+            "Rates & packages",
+            "Weddings",
+          ]
+        },
+        {
+          title: "Exhibition hire (BIE)",
+          content: [
+            "AI: More Than Human",
+            "Into the Unknown",
+            "Mangasia",
+            "Game On & Game On 2.0",
+            "Exhibition Tour Packs",
+            "Past BIE Exhibitions",
+          ]
+        },
+        {
+          type: "gallery",
+          content: [
+            {
+              title: "Venue hire",
+              description: "Hire a Barbican venue"
+            },
+            {
+              title: "What we offer",
+              description: "Business services"
+            },
+            {
+              title: "Exhibition hire (BIE)",
+              description: "Touring exhibitions"
+            }
+          ],
+        },
+      ],
+      "Read, watch & listen" : []
+    };
+
     return (
       <div className="wrapper">
-        <Header />
+        <Header
+          menuContent={mainNav}
+          handleHeaderMenu={this.handleHeaderMenu}
+        />
+        {this.state.headerMenuIsOpen && <div className="darkOverlay" />}
         <Hero
           title="Welcome to <br> the Bardican"
           text="A world-class arts and learning centre, the Barbican pushes the

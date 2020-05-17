@@ -27,7 +27,7 @@
 
       border: 1px solid $gray-light;
 
-      @include mq(1025) {
+      @include mq(1150) {
          display: flex;
          justify-content: center;
          align-items: center;
@@ -43,17 +43,12 @@
    }
 
    .arrow.left {
-      left: -10px;
 
       @include mq(1150) {
-         left: 5vw;
+         left: -10px;
       }
 
       @include mq(1400) {
-         left: 10vw;
-      }
-
-      @include mq(1700) {
          left: 8vw;
       }
 
@@ -63,29 +58,29 @@
    }
 
    .arrow.right {
-      right: -10px;
 
       @include mq(1150) {
-         right: 5vw;
+         right: -10px;
       }
 
       @include mq(1400) {
-         right: 10vw;
-      }
-
-      @include mq(1700) {
          right: 8vw;
       }
    }
    
    .articlePreviews {
       overflow: scroll;
-      padding-left: 10px;
+      padding-left: 30px;
       padding-right: 10px;
       padding-bottom: 10px;
-
-      @include mq(1024) {
+      margin-right: -20px;
+      margin-left: -20px;
+      
+      @include mq(1150) {
          overflow: hidden;
+         margin-right: 0px;
+         margin-left: 0px;
+         padding-left: 10px;
       }
 
       ul {
@@ -96,10 +91,14 @@
          justify-content: space-between;
 
          li {
-            width: calc((100% - 40px) / 3);
+            width: 350px;
             margin-left: 10px;
             margin-right: 10px;
             flex-shrink: 0;
+            
+            @include mq(1150) {
+               width: calc((100% - 40px) / 3);
+            }
 
             &:first-of-type {
                margin-left: 0px;

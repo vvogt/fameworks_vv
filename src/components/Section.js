@@ -19,7 +19,7 @@ class Section extends React.Component {
           <div className="articlePreview">
             <div
               className="arcticlePreview__image"
-              style={setBgImage(article.imageUrl, 'scroll')}
+              style={setBgImage(article.imageUrl, 'scroll', '250px')}
             />
             <div className="articlePreview__description">
               <h3>{article.title}</h3>

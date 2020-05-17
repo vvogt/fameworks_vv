@@ -2,20 +2,47 @@
    display: flex;
    background-color: $orange;
    color: $white;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
+
+   padding-top: 30px;
+
+
+
    @include setLRPadding;
 
+   @include mq(850) {
+      flex-direction: row;
+      padding-top: 0px;
+   }
+
    img {
-      width: 300px;
+      width: 90%;
       position: relative;
       bottom: 0;
-      margin-top: 30px;
+      margin-top: 40px;
       margin-right: 3vw;
+      order: 3;
+      max-width: 500px;
+
+      @include mq(850) {
+         order: 1;
+         width: 200px;
+      }
+
+      @include mq(1000) {
+         width: 300px;
+      }
    }
 
    &__text {
       margin: 1em 0;
+      order: 1;
+
+      @include mq(850) {
+         order: 2;
+      }
 
       h2 {
          font-size: rem-calc(28px);
@@ -43,7 +70,12 @@
    @include buttonWithArrow($white, $orange);
    
    button {
+      order: 2;
       margin-left: 5vw;
+
+      @include mq(850) {
+         order: 3;
+      }
    }
 
 }
