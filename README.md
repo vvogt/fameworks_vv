@@ -1,3 +1,9 @@
+## To run the project
+run 'npm install' and then 'npm run start'
+
+## the rest of this readme is automatically gernerated by create-react-app
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
