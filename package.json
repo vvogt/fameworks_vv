@@ -136,7 +136,7 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "sass-loader": "^8.0.2",
     "url-loader": "^2.3.0",
     "webpack": "^4.41.5"
